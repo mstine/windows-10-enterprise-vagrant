@@ -71,7 +71,7 @@ package { 'keepass':
 	provider 	=> 'chocolatey',
 }
 
-package { 'jdk11':
+package { 'openjdk11':
 	ensure		=> latest,
 	provider 	=> 'chocolatey',
 }
@@ -79,4 +79,19 @@ package { 'jdk11':
 package { 'jetbrainstoolbox':
 	ensure		=> latest,
 	provider 	=> 'chocolatey',
+}
+
+package { 'wsl':
+	ensure		=> latest,
+	provider 	=> 'chocolatey',
+}
+
+package { 'wsl-ubuntu-2004':
+	ensure		=> latest,
+	provider	=> 'chocolatey',
+}
+
+package { 'microsoft-windows-terminal':
+	ensure		=> latest,
+	provider	=> 'chocolatey',
 }
