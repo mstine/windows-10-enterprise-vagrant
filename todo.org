@@ -4,8 +4,56 @@
 * Tasks
 
 ** TODO automate reboot after wsl2 install
-** TODO automate desktop font size
-** TODO automate time zone settings
-** TODO fix audio
+** DONE automate time zone settings
+
+https://www.windowscentral.com/how-change-your-device-time-zone-settings-windows-10
+
+
+** DONE fix audio
 ** TODO automate audio fixes
-** TODO automate desktop theme configuration
+
+So to automate this, will need to:
+1. Turn on test signing for drivers
+2. Reboot
+3. Install the audio driver
+4. Reboot
+
+** DONE automate desktop theme configuration and fonts
+
+lots of bullshit in accessibility I want to disable:
+- animations
+
+https://www.tenforums.com/tutorials/6377-change-visual-effects-settings-windows-10-a.html#option2
+
+'HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\VisualEffects'
+VisualFXSetting 2
+
+'HKCU:\Control Panel\Desktop'
+UserPreferencesMask 9E 12 03 80 10 00 00 00
+
+- transparency
+- font size seems to be here as well
+
+- want default app mode to be dark
+
+'HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Themes\Personalize'
+AppsUseLightTheme 0
+SystemUsesLightTheme 0
+EnableTransparency 0
+
+'HKCU:\SOFTWARE\Microsoft\Accessibility'
+TextScaleFactor 125
+
+** TODO pinned taskbar items
+** TODO fix EmacsChocolateyPackage in my fork
+** DOING automate default browser
+   
+It seems like this is the easiest way: https://kolbi.cz/blog/2017/11/10/setdefaultbrowser-set-the-default-browser-per-user-on-windows-10-and-server-2016-build-1607/
+
+** DONE Why does the Settings app freeze up every time you do something?
+
+drag and drop support seems to be the primary culprit
+also switched to ICH9 chipset
+should swap back and forth between 1 and 2 cores just to see
+
+** TODO Should look into automated provisioning inside of WSL - like what linux packages I want
