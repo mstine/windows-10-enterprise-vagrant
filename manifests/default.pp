@@ -1,5 +1,10 @@
 include chocolatey
 
+exec { 'set-time-zone':
+     command	=> 'C:\vagrant\powershell\timezone.ps1',
+     provider 	=> powershell,
+}
+
 package { 'notepadplusplus':
 	ensure		=> latest,
 	provider 	=> 'chocolatey',

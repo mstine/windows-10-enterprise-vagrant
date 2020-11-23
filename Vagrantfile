@@ -27,6 +27,7 @@ Vagrant.configure("2") do |config|
 
   config.vm.provision :shell do |shell|
     shell.inline = "puppet module install puppetlabs-chocolatey --version 5.1.1"
+    shell.inline = "puppet module install puppetlabs-powershell --version 4.0.0"
   end
 
   config.vm.provision "puppet"
