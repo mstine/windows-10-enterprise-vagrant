@@ -9,6 +9,8 @@ Vagrant.configure("2") do |config|
     vb.linked_clone = true
     vb.gui = true
     vb.memory = "8192"
+    vb.customize ["modifyvm", :id, "--cpus", "2"]
+    vb.customize ["modifyvm", :id, "--chipset", "ich9"]
     vb.customize ["modifyvm", :id, "--audio", "coreaudio"]
     vb.customize ["modifyvm", :id, "--audiocontroller", "ac97"]
     vb.customize ["modifyvm", :id, "--audioin", "on"]
@@ -17,7 +19,7 @@ Vagrant.configure("2") do |config|
     vb.customize ["modifyvm", :id, "--vram", "256"]
     vb.customize ["modifyvm", :id, "--accelerate3d", "on"]
     vb.customize ["modifyvm", :id, "--clipboard-mode", "bidirectional"]
-    vb.customize ["modifyvm", :id, "--draganddrop", "bidirectional"]
+    vb.customize ["modifyvm", :id, "--draganddrop", "disabled"]
     vb.customize ["modifyvm", :id, "--vrde", "off"]
   end
 
