@@ -81,9 +81,10 @@ package { 'jetbrainstoolbox':
 	provider 	=> 'chocolatey',
 }
 
-package { 'wsl':
+package { 'wsl2':
 	ensure		=> latest,
 	provider 	=> 'chocolatey',
+	install_options	=> ['--params','/Version:2','/Retry:true'],
 }
 
 package { 'wsl-ubuntu-2004':
