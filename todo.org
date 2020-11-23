@@ -1,0 +1,11 @@
+#+TITLE: Windows 10 Vagrant Box
+#+AUTHOR: Matt Stine
+
+* Tasks
+
+** TODO automate reboot after wsl2 install
+** TODO automate desktop font size
+** TODO automate time zone settings
+** TODO fix audio
+** TODO automate audio fixes
+** TODO automate desktop theme configuration
