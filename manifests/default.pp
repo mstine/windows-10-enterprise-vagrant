@@ -96,3 +96,29 @@ package { 'microsoft-windows-terminal':
 	ensure		=> latest,
 	provider	=> 'chocolatey',
 }
+
+package { '1password':
+	ensure		=> latest,
+	provider	=> 'chocolatey',
+}
+
+package { 'rustup.install':
+	ensure		=> latest,
+	provider	=> 'chocolatey',
+}
+
+package { 'visualstudio2019community':
+	ensure		=> latest,
+	provider	=> 'chocolatey',
+	install_options => ['--package-parameters',
+			    '"', '--allWorkloads',
+			    '--includeRecommended',
+			    '--includeOptional',
+			    '--passive',
+			    '--locale','en-US','"']
+}
+
+package { 'visualstudio2019-workload-nativedesktop':
+	ensure		=> latest,
+	provider	=> 'chocolatey',
+}
