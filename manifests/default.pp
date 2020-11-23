@@ -5,6 +5,16 @@ exec { 'set-time-zone':
      provider 	=> powershell,
 }
 
+exec { 'set-accessibility-preferences':
+     command	=> 'C:\vagrant\powershell\accessibility.ps1',
+     provider 	=> powershell,
+}
+
+exec { 'set-personalization-preferences':
+     command	=> 'C:\vagrant\powershell\personalize.ps1',
+     provider 	=> powershell,
+}
+
 package { 'notepadplusplus':
 	ensure		=> latest,
 	provider 	=> 'chocolatey',
